@@ -1,0 +1,35 @@
+public class SingleThreadExample {
+    public static void main(String[] args) {
+        System.out.println("Program starts...");
+
+        printNumbers();
+
+        printLetters();
+
+        System.out.println("Program ends...");
+    }
+
+    public static void printNumbers() {
+        System.out.println("Printing numbers:");
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(i);
+            try {
+                Thread.sleep(500); 
+            } catch (InterruptedException e) {
+                System.out.println("Interrupted!");
+            }
+        }
+    }
+
+    public static void printLetters() {
+        System.out.println("Printing letters:");
+        for (char c = 'A'; c <= 'E'; c++) {
+            System.out.println(c);
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                System.out.println("Interrupted!");
+            }
+        }
+    }
+}
